@@ -1,6 +1,6 @@
 # START
 
-**TODO: Add description**
+## *Learning Elixir Programing*
 
 ## Installation
 
