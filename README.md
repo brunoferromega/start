@@ -1,6 +1,4 @@
-# START
-
-## *Learning Elixir Programing*
+# *Learning Elixir Programing*
 
 ## Installation
 
