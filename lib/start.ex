@@ -18,17 +18,24 @@ defmodule START do
 
   def sqrt(value), do: value * value
 
-  def read_files do
-    content = "let's go!"
+  def read_file(path) do
+    finded = File.open(path)
 
-    lp =
-      with {:ok, file} <- File.open("/home/bruno/Projects/Elixir/start/test.txt", [:read]),
-           content = IO.read(file, :all),
-           :ok = File.close(file),
-           [_, uid, gid] = Regex.run(~r/^_lp:.*?:(\d+):(\d+)/m, content),
-           do: "​​Group: ​#{gid} User: ​​#{uid}​​"
-
-    IO.puts(lp)
-    IO.puts(content)
+    case finded do
+      {:ok, file} -> "Read data: #{IO.read(file, :line)}"
+      {_, err} -> "Error: #{:file.format_error(err)}"
+    end
   end
+
+  @spec handle_nums(Integer.t(), Integer.t(), Integer.t()) :: String.t()
+  def handle_nums(firs, sec, thir) do
+    cond do
+      firs == 0 and sec == 0 -> "FizzBuzz"
+      firs == 0 -> "Fizz"
+      sec == 0 -> "Buzz"
+      true -> Integer.to_string(thir)
+    end
+  end
+
+  def aside_rest(n), do: handle_nums(rem(n, 3), rem(n, 5), n)
 end
