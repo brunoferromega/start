@@ -14,3 +14,16 @@ ex_name |> IO.puts()
 
 {_, current_dir} = File.cwd()
 IO.puts("Current woring directory: #{current_dir}")
+
+file_txt = current_dir <> "/test.txt"
+
+IO.puts(file_txt)
+
+handle_open = fn
+  {:ok, file} -> "Read data: #{IO.read(file, :line)}"
+  {_, err} -> "Error: #{:file.format_error(err)}"
+end
+
+opened_file = File.open(file_txt)
+
+IO.puts(handle_open.(opened_file))
