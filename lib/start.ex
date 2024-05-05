@@ -1,19 +1,9 @@
 defmodule START do
-  @moduledoc """
-  Documentation for `START`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> START.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def hello(name, greeting) do
+    fn
+      ^name -> "#{greeting} #{name}"
+      _ -> "I don't kown you!"
+    end
   end
 
   def sqrt(value), do: value * value
@@ -27,6 +17,7 @@ defmodule START do
     end
   end
 
+  # Ex: 2
   @spec handle_nums(Integer.t(), Integer.t(), Integer.t()) :: String.t()
   def handle_nums(firs, sec, thir) do
     cond do
@@ -37,5 +28,6 @@ defmodule START do
     end
   end
 
+  # Ex: 2
   def aside_rest(n), do: handle_nums(rem(n, 3), rem(n, 5), n)
 end

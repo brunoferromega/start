@@ -27,3 +27,29 @@ end
 opened_file = File.open(file_txt)
 
 IO.puts(handle_open.(opened_file))
+
+greeter = fn name ->
+  fn -> "Hello #{name}" end
+end
+
+bruno_greeter = greeter.("Bruno")
+IO.puts(bruno_greeter.())
+
+word1 = "Coffe"
+word2 = "Late"
+
+join_words = fn word ->
+  fn wordn -> word <> " " <> wordn end
+end
+
+join_wordsn = join_words.(word1)
+IO.puts(join_wordsn.(word2))
+
+double_time = fn n -> n * 2 end
+fun_apply = fn fun, value -> fun.(value) end
+
+IO.puts(fun_apply.(double_time, 4))
+
+num_list = [1, 2, 3, 4, 5]
+double_list = Enum.map(num_list, double_time)
+IO.inspect(double_list)
