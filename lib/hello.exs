@@ -53,3 +53,16 @@ IO.puts(fun_apply.(double_time, 4))
 num_list = [1, 2, 3, 4, 5]
 double_list = Enum.map(num_list, double_time)
 IO.inspect(double_list)
+
+speak = &IO.puts(&1)
+speak.("Helper function in Elixir!")
+
+squarer = &(&1 * &1)
+IO.puts(squarer.(10))
+
+# Ex 5
+
+list_plus2 = Enum.map([1, 2, 3, 4], &(&1 + 2))
+IO.inspect(list_plus2)
+
+Enum.each([1, 2, 3, 4], &IO.inspect/1)

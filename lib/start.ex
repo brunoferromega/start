@@ -1,10 +1,16 @@
-defmodule START do
-  def hello(name, greeting) do
-    fn
+defmodule Start do
+  def hello(name, greeting),
+    do: fn
       ^name -> "#{greeting} #{name}"
       _ -> "I don't kown you!"
     end
-  end
+
+  def say_something,
+    do:
+      (
+        IO.puts("Testing multi lines")
+        IO.puts("My name is Bruno")
+      )
 
   def sqrt(value), do: value * value
 
