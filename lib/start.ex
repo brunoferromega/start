@@ -36,4 +36,10 @@ defmodule Start do
 
   # Ex: 2
   def aside_rest(n), do: handle_nums(rem(n, 3), rem(n, 5), n)
+
+  def fac(0), do: 1
+  def fac(n), do: n * fac(n - 1)
+
+  def rec_sum(0), do: 0
+  def rec_sum(n), do: n + rec_sum(n - 1)
 end
