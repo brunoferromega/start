@@ -16,4 +16,7 @@ defmodule Recursive do
 
   def square([]), do: []
   def square([head | tail]), do: [head * head | square(tail)]
+
+  def map_sum([], _fun), do: 0
+  def map_sum([head | tail], fun), do: fun.(head) + map_sum(tail, fun)
 end
