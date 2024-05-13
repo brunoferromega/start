@@ -19,4 +19,8 @@ defmodule Recursive do
 
   def map_sum([], _fun), do: 0
   def map_sum([head | tail], fun), do: fun.(head) + map_sum(tail, fun)
+
+  def swap([]), do: []
+  def swap([a, b | tail]), do: [b, a | swap(tail)]
+  def swap([_]), do: raise("Can't swap a list with an odd number of elements")
 end
