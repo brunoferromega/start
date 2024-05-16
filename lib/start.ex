@@ -24,7 +24,6 @@ defmodule Start do
   end
 
   # Ex: 2
-  @spec handle_nums(Integer.t(), Integer.t(), Integer.t()) :: String.t()
   def handle_nums(firs, sec, thir) do
     cond do
       firs == 0 and sec == 0 -> "FizzBuzz"
