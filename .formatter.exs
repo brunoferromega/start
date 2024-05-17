@@ -2,8 +2,8 @@
 [
   inputs: ["{mix,.formatter}.exs", "{config,lib,test}/**/*.{ex,exs}"],
   locals_without_parens: [
-    :"Elixir.IO".inspect,
     :"Elixir.IO".puts,
+    :"Elixir.IO".inspect,
     alias: 1,
     alias: 2,
     case: 2,
@@ -53,6 +53,6 @@
     assert_raise: 2,
     assert_raise: 3,
     assert_receive: 1,
-    assert_receive: 2,
+    assert_receive: 2
   ]
 ]
